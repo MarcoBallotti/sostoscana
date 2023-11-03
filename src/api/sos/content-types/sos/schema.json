@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "soses",
+  "info": {
+    "singularName": "sos",
+    "pluralName": "soses",
+    "displayName": "sos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "insdate": {
+      "type": "datetime"
+    },
+    "closetime": {
+      "type": "datetime"
+    },
+    "open": {
+      "type": "boolean"
+    },
+    "position": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::position.position",
+      "inversedBy": "sos"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sos"
+    }
+  }
+}
